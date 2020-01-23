@@ -108,6 +108,16 @@ void PrintPerson(Person *person)
 	cout << "\tAge: " << person->age << endl << endl;;
 }
 
+void inputPerson(struct Person *p){
+	cout<<"Enter name: ";
+	cin>>p->name;
+	cout<<"Enter age: ";
+	cin>>p->age;
+	count++;
+	p->id=count;
+}
+
+int count=0;
 /** main function: Will create and process a linked list
  */
 int main() {
@@ -127,12 +137,17 @@ int main() {
         else{        
         	switch(n){
             	case 1: cout<<"You selected: Add a person"<<endl;   
+						Person p;
+						//input details from user
+						inputPerson(&p);
+						ListInsert(&list, &p);
                     	break;
             	case 2: cout<<"You selected: Find a person"<<endl;
 						break;
             	case 3: cout<<"You selected: Remove a person"<<endl;
                 		break;
             	case 4: cout<<"You selected: Print the list"<<endl;
+
 						break;
             	case 5: return 0;
                         break;
