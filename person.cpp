@@ -116,7 +116,7 @@ int main() {
 //*************** PUT THE REST OF YOUR CODE HERE  *****************
 
 	Person person;
-	person.name = “John”;
+	person.name = "John";
 	person.age = 10;
 	person.id = 1045;
 	PrintPerson(&person);
