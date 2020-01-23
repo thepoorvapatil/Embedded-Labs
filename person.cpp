@@ -10,7 +10,7 @@ struct Person
 
 void PrintPerson(Person *person)
 {
-	cout << person->name << “ is “ << person->age << “ years old\n”;
+	cout << person->name << " is " << person->age << " years old\n";
 }
 
 int main()
