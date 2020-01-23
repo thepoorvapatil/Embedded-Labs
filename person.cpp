@@ -115,29 +115,10 @@ int main() {
 	ListInitialize(&list);			// Initialize the list
 //*************** PUT THE REST OF YOUR CODE HERE  *****************
 
+	Person person;
+	person.name = “John”;
+	person.age = 10;
+	person.id = 1045;
+	PrintPerson(&person);
 
-	int n;
-        while (true){
-            cout<<"Main menu:\n\n1. Add a person\n2. Find a person\n3. Remove a person\n4. Print the list\n5. Exit\n\nSelect an option: ";
-            cin>>n;
-            if(n>5 || n<1){
-				cout<<"Invalid Choice. Choose again"<<endl;
-                continue;
-            }    
-            else{        
-            switch(n){
-                case 1: cout<<"You selected: Add a person"<<endl;   
-                        break;
-                case 2: cout<<"You selected: Find a person"<<endl;
-						break;
-                case 3: cout<<"You selected: Remove a person"<<endl;
-                		break;
-                case 4: cout<<"You selected: Print the list"<<endl;
-						break;
-                case 5: return 0;
-                        break;
-                default: break;
-                }
-            }
-        }
 } //end main
