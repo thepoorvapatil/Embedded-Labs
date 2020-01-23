@@ -16,7 +16,7 @@ void PrintPerson(Person *person)
 int main()
 {
 	Person person;
-	person.name = “John”;
+	person.name = "John";
 	person.age = 10;
 	PrintPerson(&person);
 }
