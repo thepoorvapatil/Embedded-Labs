@@ -87,7 +87,7 @@ void Write1Led(char *pBase, int ledNum, int state){
     //What is the address distance between LED offsets, are they constant?
     // constant distance of 4
     //offset = 0th LED + lednum*constantdist
-    int ledOffset = 0x12C + (ledNum * 4);
+    int ledOffset = gpio_led1_offset + (ledNum * 4);
     RegisterWrite(pBase, ledOffset, state);
 }
 
@@ -98,7 +98,7 @@ void Write1Led(char *pBase, int ledNum, int state){
 * @return Switch value read
 */
 int Read1Switch(char *pBase, int switchNum){
-    int switchOffset = 0x14C + (switchNum * 4);
+    int switchOffset = gpio_sw1_offset + (switchNum * 4);
     return RegisterRead(pBase, switchOffset);
 }
 
@@ -115,6 +115,16 @@ int main()
     }
     // ************** Put your code here **********************
     // Done
-
+    cout<<"Enter an LED number (0-7): " <<endl;
+    int ledNum;
+    cin>>ledNum;
+    cout<<"Enter the state (0 or 1): " <<endl;
+    int state;
+    cin>>state;
+    Write1Led(pBase,ledNum,state);
+    cout<<"Enter the switch number (0-7): " <<endl;
+    int switchNum;
+    cin>>switchNum;
+    cout<<Read1Switch(pBase,switchNum)<<endl;
     Finalize(pBase, fd);
 }
